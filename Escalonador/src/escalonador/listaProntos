@@ -1,0 +1,36 @@
+package epso;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class ListaProntos {
+	
+	List<Processo> listaProntos = new ArrayList <Processo>();
+	
+	public void ordenaListaProntos(List<Processo> listaProntos) {
+		Collections.sort(listaProntos, new Comparator<Processo>(){		
+			@Override
+			public int compare(Processo o1, Processo o2) {
+				// TODO Auto-generated method stub
+				Processo p1 = (Processo) o1;  
+	            Processo p2 = (Processo) o2;
+	            
+	            //se o credito de p1 for maior, ele deve ser o primeiro da lista
+	            if (p1.credito > p2.credito) { 
+		            return -1;
+		        }
+	            
+	            //se o credito de p1 for menor, p2 deve continuar na frente
+		        if (p1.credito <= p2.credito) {
+		            return 1;
+		        }
+		        return 0;
+	            
+			}
+			
+		});
+	
+	}
+}
