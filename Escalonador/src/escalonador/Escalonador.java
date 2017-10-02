@@ -10,7 +10,7 @@ public class Escalonador {
     int[] prioridades;
     int quantum;
     TabelaProcessos tabelaProcessos;
-    
+    // teste branch
     public Escalonador(String diretorio) {
         // constrói a lista que contém os arquivos que irão gerar os processos
         listaArquivos = GerenciadorArquivos.carregarArquivos(diretorio);
